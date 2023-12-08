@@ -1,0 +1,214 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+:root{
+    
+    --defult-color:#212529 var(--defult-color);
+    --primry-color: #E61414;
+    --secondary-color: #e2e2e2;
+    --font-default: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-primary: "Amatic SC", sans-serif;
+    --font-secondary: "Inter", sans-serif;
+    --animation-duration:400ms;
+    }
+ 
+
+
+body{
+font-family: var(--font-default);
+color: var(--defult-color);
+
+}
+a,span{
+    display: inline-block;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+li{
+    text-decoration: none;
+    list-style: none;
+}
+ul{
+    list-style-type: none;  
+}
+.container{
+    width: 80%;
+    margin: auto;
+}
+h1,h2,h3,h4{
+    font-family: var(--font-primary);
+}
+.section-bg{
+    background-color: var(--secondary-color);
+}
+.btn{
+    --border-radius: 0px ;
+    --padding:5px 10px ;
+    --border-color: --primry-color ;
+    --border-width: 3px;
+    --background-color: --primry-color ;
+    --color: #9f0707 ;
+    --font-size:1rem;
+     padding: var(--padding);
+     border: var(--border-color) solid var(--border-width);
+     border-radius: var(--border-radius);
+     background-color: var(--background-color);
+     color: var(--color);
+     font-size: var(--font-size); 
+    cursor: pointer;
+}
+/* -------------------nav bar ----------------*/
+nav .container{
+    padding: 1.5rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+nav  ul {
+    display: flex;
+    gap: 1.8rem;
+}
+nav  ul li a{
+font-size: 1.5rem;
+font-weight: 600;
+color: #a1a1a1;
+position: relative;
+}
+nav ul li a::before{
+    content:"";
+    position: absolute;
+    width: 100%;
+    height: .0125rem;
+    background-color: var(--primry-color);
+    left: 0;
+    bottom: -0.1875rem;
+}
+
+nav .container .logo h1{
+    font-size: 1.875rem;
+    font-family: var(--font-default);
+}
+nav  .logo ::after{
+    content: ".";
+    color: #000;
+}
+nav .mode{
+    font-size: 2rem;
+
+}
+/* -----------------------header------------------- */
+
+header .container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 5%;
+}
+header .container > *{
+    width: 40%;
+}
+header .container picture img{
+    width: 100%;
+    filter: drop-shadow(0px 0px 10px #0006) ;
+}
+header .container picture img:hover{
+animation: shake 2s infinite;
+}
+
+@keyframes shake {
+    0%{
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(-180deg);
+    }
+    100%{
+        transform: rotate(90deg);
+    }
+        
+        
+}
+.header-content h2{ 
+font-size: 4rem;
+}
+.header-content p{
+    font-size: 2rem;
+
+}
+/* -----------------------header content------------------- */
+.btn-main{
+background-color: var(--primry-color);
+border-radius: 0 100vh 100vh;
+color: #fff;
+
+}
+.btn-main:hover{
+    background-color:#f43f3f ;
+    transition: .3s;
+}
+header .btn-group{
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+header .vedio{
+    display: flex;
+    align-items: center;
+
+
+}
+.vedio .icon{
+    width: 55px;
+    height: 55px;
+    background-image: linear-gradient( to right , red 0% 50%,white 50% 100%);
+    border-radius: 50%;
+    display: flex;
+     justify-content: center;
+     align-items: center;
+     position: relative;
+
+}
+.vedio .icon::before{
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: inherit;
+}
+.vedio .icon i{
+    z-index: 10;
+}
+@media  screen and (min-width:1200px) {
+    header .container{
+        min-height: 100vh;
+    }
+    
+}
+@media  screen and (max-width:990px){
+    header .container{
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        padding-top: 5%;
+    }
+    header .container > *{
+        width: 100%;
+        text-align: center;
+    }
+    header .btn-group{
+        justify-content: center;
+    }
+   
+}
+
